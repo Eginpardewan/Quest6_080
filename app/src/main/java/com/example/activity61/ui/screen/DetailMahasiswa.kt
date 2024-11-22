@@ -114,7 +114,13 @@ fun DetailMahasiswa(
                         )
                     }
                 }
-
+                Button(
+                    onClick = {
+                        onBackButtonClicked()
+                    },
+                ) {
+                    Text(text = "Kembali ke Halaman Utama")
+                }
             }
         }
     }
