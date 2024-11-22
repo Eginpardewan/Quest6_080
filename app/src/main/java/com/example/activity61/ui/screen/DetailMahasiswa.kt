@@ -126,3 +126,36 @@ fun DetailMahasiswa(
     }
 }
 
+@Composable
+fun CardSection(judulParam: String, isiParam: String) {
+    Column(
+        horizontalAlignment = Alignment.Start,
+        modifier = Modifier.padding(top = 10.dp)
+    ) {
+
+
+        Row(
+            modifier = Modifier
+                .padding(2.dp)
+                .fillMaxWidth(),
+            horizontalArrangement = Arrangement.Start
+
+        ) {
+            Text(
+                text = judulParam, modifier = Modifier
+                    .weight(0.8f)
+                    .padding(start = 10.dp)
+            )
+            Text(
+                text = ":", modifier = Modifier
+                    .weight(0.2f)
+                    .padding(start = 10.dp)
+            )
+            Text(
+                text = isiParam, modifier = Modifier
+                    .weight(2f)
+                    .padding(start = 10.dp)
+            )
+        }
+    }
+}
