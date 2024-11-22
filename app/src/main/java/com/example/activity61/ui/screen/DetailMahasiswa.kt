@@ -34,5 +34,16 @@ fun DetailMahasiswa(
     mahasiswa: Mahasiswa,
     rencanaStudi: RencanaStudi,
     onBackButtonClicked: () -> Unit
-)
+) {
+    val listData = listOf(
+        Pair("NIM", mahasiswa.nim),
+        Pair("Nama", mahasiswa.nama),
+        Pair("Email", mahasiswa.email),
+        Pair("Nama MK", rencanaStudi.namaMK),
+        Pair("Kelas", rencanaStudi.kelas),
+
+        )
+
+
+}
 
