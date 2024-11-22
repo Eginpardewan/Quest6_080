@@ -44,6 +44,79 @@ fun DetailMahasiswa(
 
         )
 
+    Column(
+        modifier = Modifier
+            .fillMaxSize()
+            .background(
+                color = colorResource(
+                    id = R.color.Primary
+                )
+            )
+    ) {
+        Row(
+            modifier = Modifier
+                .fillMaxWidth()
+                .padding(16.dp),
+            verticalAlignment = Alignment.CenterVertically
+        ) {
+            Image(
+                painter = painterResource(id = R.drawable.umylogo),
+                contentDescription = null,
+                modifier = Modifier
+                    .clip(shape = CircleShape)
+                    .size(50.dp)
 
+            )
+            Spacer(modifier = Modifier.padding(start = 16.dp))
+            Column(modifier = Modifier.weight(1f)) {
+
+                Text(
+                    text = "Universitas Muhammadiyah Yogyakarta",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 15.sp,
+                    color = Color.White
+                )
+                Text(
+                    text = "Unggul dan Islami",
+                    fontWeight = FontWeight.Light,
+                    fontSize = 12.sp,
+                    color = Color.White
+                )
+            }
+        }
+        Box(
+            modifier = Modifier
+                .background(
+                    color = Color.White,
+                    shape = RoundedCornerShape(
+                        topEnd = 15.dp,
+                        topStart = 15.dp
+                    )
+                )
+                .fillMaxSize()
+        ) {
+            Column(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .padding(16.dp),
+                horizontalAlignment = Alignment.CenterHorizontally
+            ) {
+                Text(
+                    text = "Detail KRS Mahasiswa",
+                    fontWeight = FontWeight.Bold,
+                    fontSize = 20.sp
+                )
+                Column {
+                    listData.forEach { item ->
+                        CardSection(
+                            judulParam = item.first,
+                            isiParam = item.second
+                        )
+                    }
+                }
+
+            }
+        }
+    }
 }
 
